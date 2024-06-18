@@ -1,0 +1,15 @@
+{
+  "name": "sba_308a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "apikey.js",
+  "scripts": {
+    "nodemon":"nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
