@@ -1,6 +1,8 @@
-import apikey from "./apikey";
-const button = document.getElementById("button");
+import makeACard from "./CardFactory.js";
+
+const button = document.querySelector(".button");
 const option = document.getElementById("muscles");
+const result = document.querySelector(".result")
 
 // Example POST method implementation:
 async function getData(muscle) {
@@ -12,7 +14,7 @@ async function getData(muscle) {
     credentials: "same-origin", // include, *same-origin, omit
     headers: {
       "Content-Type": "application/json",
-      "X-Api-Key": apikey
+      "X-Api-Key": "v4YOH2MgQJtM6G0u76hWPA==wl8M0ixevV2myeJF",
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     
@@ -27,9 +29,33 @@ async function getData(muscle) {
  
 
  button.addEventListener("click",()=>{
- console.log(option.value)
   getData(option.value).then((data)=>{
-    console.log(data)
+   
+    if (result.children.length == 4) {
+      result.removeChild(result.children[0]);
+      result.removeChild(result.children[0]);
+      result.removeChild(result.children[0]);
+      result.removeChild(result.children[0]);
+    }
+
+
+    for( let i =0; i < 4; i++){
+      console.log(data)
+      let title = data[i].name
+      let equipment  = data[i].equipment
+      let info = data[i].instructions
+  
+      let card = makeACard(title, equipment , info)
+  
+      result.appendChild(card)
+    }
+
+
+
+
+    
+     
+
    })
  });
 
