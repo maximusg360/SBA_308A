@@ -8,8 +8,10 @@ function makeACard (name, equipment, instructions){
 
 // container.className = "mt-5 card-body" 
 
-    card.className = "card"
+    card.className = "card mt-2 mb-5"
     cardBody.className = "card-body"
+// container.className = "mt-2 mb-5"
+
 
     Title.innerText = name
     equipmentInfo.innerText = equipment

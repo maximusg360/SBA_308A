@@ -1,4 +1,6 @@
 import makeACard from "./CardFactory.js";
+import url from "./url.js";
+import apikey from "./apikey.js";
 
 const button = document.querySelector(".button");
 const option = document.getElementById("muscles");
@@ -7,14 +9,14 @@ const result = document.querySelector(".result")
 // Example POST method implementation:
 async function getData(muscle) {
   // Default options are marked with *
-  const response = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
+  const response = await fetch(url(muscle), {
     method: "GET", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
     credentials: "same-origin", // include, *same-origin, omit
     headers: {
       "Content-Type": "application/json",
-      "X-Api-Key": "v4YOH2MgQJtM6G0u76hWPA==wl8M0ixevV2myeJF",
+      "X-Api-Key": apikey,
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     
