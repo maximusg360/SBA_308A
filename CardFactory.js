@@ -3,15 +3,24 @@ function makeACard (name, equipment, instructions){
     let equipmentInfo = document.createElement("p")
     let instructionsInfo = document.createElement("p")
     let container = document.createElement("div")
+    let card = document.createElement("div")
+    let cardBody = document.createElement("div")
 
+// container.className = "mt-5 card-body" 
+
+    card.className = "card"
+    cardBody.className = "card-body"
 
     Title.innerText = name
     equipmentInfo.innerText = equipment
     instructionsInfo.innerText = instructions
 
-    container.appendChild(Title)
-    container.appendChild(equipmentInfo)
-    container.appendChild(instructionsInfo)
+    cardBody.appendChild(Title)
+    cardBody.appendChild(equipmentInfo)
+    cardBody.appendChild(instructionsInfo)
+
+    card.appendChild(cardBody)
+    container.appendChild(card)
 
     return container
 
